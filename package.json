@@ -9,6 +9,9 @@
     "server-start": "node server/server.js",
     "test": "echo \"No test specified\""
   },
+  "files": [
+    "dist"
+  ],
   "keywords": [],
   "author": "",
   "license": "MIT",
