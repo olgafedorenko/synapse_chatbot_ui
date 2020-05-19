@@ -1,3 +1,1 @@
-import ProgressButton from './src/index';
-
-export default ProgressButton;
+import './src/index';
