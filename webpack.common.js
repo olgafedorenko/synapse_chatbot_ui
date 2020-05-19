@@ -15,9 +15,12 @@ const config = {
   entry: './index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[chunkhash:4].js',
-    chunkFilename: '[name].[chunkhash:4].js',
-    publicPath: '/'
+    filename: 'bundle.js'
+  },
+  resolve: {
+    alias: {
+      package: path.join(__dirname, 'src'),
+    },
   },
   module: {
     rules: [
