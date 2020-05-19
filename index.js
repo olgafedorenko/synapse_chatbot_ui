@@ -1,2 +1,2 @@
 // eslint-disable-next-line import/no-unresolved
-export * from './dist';
+export * from './src/index';
