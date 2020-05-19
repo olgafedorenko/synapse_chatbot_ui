@@ -12,15 +12,9 @@ import FormErrorMessage from './components/ErrorMessage/ErrorMessage';
 import FormAlertMessage from './components/AlertMessage/AlertMessage';
 
 import FormInput from './components/Input/Input';
-import FormNumberInput from './components/Input/NumberInput';
 import FormTextarea from './components/Textarea/Textarea';
 import FormCheckboxGroup from './components/CheckboxGroup/CheckboxGroup';
 import FormRadioGroup from './components/RadioGroup/RadioGroup';
-import FormDropdown from './components/Dropdown/Dropdown';
-
-import FormDropdownContent from './components/Dropdown/components/DropdownContent';
-import FormDropdownHead from './components/Dropdown/components/DropdownHead';
-import FormAccordion from './components/Accordion/Accordion';
 
 import MainForm from './components/Form/Form';
 import MainFormTypeConstants from './components/Form/util/FormTypeConstants';
@@ -46,15 +40,9 @@ export const ErrorMessage = FormErrorMessage;
 export const AlertMessage = FormAlertMessage;
 
 export const Input = FormInput;
-export const NumberInput = FormNumberInput;
 export const Textarea = FormTextarea;
 export const CheckboxGroup = FormCheckboxGroup;
 export const RadioGroup = FormRadioGroup;
-export const Dropdown = FormDropdown;
-
-export const DropdownContent = FormDropdownContent;
-export const DropdownHead = FormDropdownHead;
-export const Accordion = FormAccordion;
 
 export const Form = MainForm;
 export const FormTypeConstants = MainFormTypeConstants();

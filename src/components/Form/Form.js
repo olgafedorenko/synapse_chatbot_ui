@@ -12,8 +12,7 @@ import {
   RadioGroup,
   Dropdown,
   FormTypeConstants,
-  ErrorMessage,
-  NumberInput
+  ErrorMessage
 } from '../../index';
 
 import * as Util from './util/form.util';

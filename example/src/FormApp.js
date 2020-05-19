@@ -6,12 +6,9 @@ import {
   Form,
   Input,
   Textarea,
-  Dropdown,
   Label
 } from '../../src/index';
 
-import DropdownHead from '../../src/components/Dropdown/components/DropdownHead'
-import DropdownContent from '../../src/components/Dropdown/components/DropdownContent'
 import CustomFooter from './components/CustomFooter';
 
 import Colors from '../../src/colors';

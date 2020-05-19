@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { NumberInput } from '../../../src/index';
 import Colors from '../../../src/colors';
 
 const MainLayout = styled.div`
@@ -45,31 +44,7 @@ class ExampleNumberInputs extends React.Component {
   render(){
     return (
       <MainLayout>
-        <NumberInput
-          className="custom-number-input"
-          propName="phoneNumber"
-          value={this.state.phoneNumber}
-          onChange={this.updateField}
-          label="Phone Number"
-          type="phone"
-          error="I Am Error"
-        />
-
-        <NumberInput
-          propName="amount"
-          value={this.state.amount}
-          onChange={this.updateField}
-          label="Amount"
-          type="currency"
-        />
-
-        <NumberInput
-          propName="date"
-          value={this.state.date}
-          onChange={this.updateField}
-          label="Date"
-          type="date"
-        />
+        hello
       </MainLayout>
     )
   }

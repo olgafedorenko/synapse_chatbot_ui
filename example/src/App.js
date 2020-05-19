@@ -2,13 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 import {
-  Dropdown,
-  Accordion,
   SvgIcons,
-  DropdownHead,
-  DropdownContent,
   Button,
-  NumberInput,
 } from 'package';
 
 import DisplayItem from './components/DisplayItem';
@@ -20,17 +15,6 @@ const Main = styled.div`
   // & > * {
   //   padding: 32px 16px;
   // }
-`;
-
-const DropdownItem = styled.div`
-  display: flex;
-  justify-content: space-between;
-
-  width: 100%;
-`;
-
-const StyledAccordion = styled(Accordion)`
-  padding-left: 0;
 `;
 
 class App extends React.Component {
@@ -50,7 +34,6 @@ class App extends React.Component {
     };
 
     this.updateField = this.updateField.bind(this);
-    this.displayItemInDropdown = this.displayItemInDropdown.bind(this);
   }
 
   updateField(e, value, field) {
@@ -59,16 +42,6 @@ class App extends React.Component {
     if ((value || value === '') && field) {
       this.setState({ [field]: value });
     }
-  }
-
-  displayItemInDropdown(item) {
-    return (
-      <DropdownItem>
-        <p>{item.text}</p>
-        <p>{item.key}</p>
-        <p>Some Role i guess</p>
-      </DropdownItem>
-    );
   }
 
   someLabel() {
@@ -105,10 +78,6 @@ class App extends React.Component {
           clear
         </Button>
         <SvgIcons.check_filled_circle fillColor="green" borderColor="green" right/>
-
-        <StyledAccordion header="HI" showContent={this.state.hide}>
-          Content
-        </StyledAccordion>
 
         <NumberInput
           value={this.state.number}

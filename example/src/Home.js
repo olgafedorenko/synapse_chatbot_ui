@@ -18,7 +18,6 @@ import ExButtonGroup from './components/ExButtonGroup';
 import LoadingCube from '../../src/components/LoadingCube/LoadingCube';
 import ExampleModalBasic from './components/ExampleModalBasic';
 import SubModalContainer from './components/SubModalContainer';
-import ExampleNumberInputs from './components/ExampleNumberInputs';
 
 import { Button } from '../../src/index';
 
@@ -59,10 +58,6 @@ const pages = {
   Modal: {
     name: 'Modal w submodal',
     component: <SubModalContainer />,
-  },
-  numberInput: {
-    name: 'Number Inputs',
-    component: <ExampleNumberInputs />,
   },
 };
 
