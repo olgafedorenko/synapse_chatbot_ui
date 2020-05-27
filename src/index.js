@@ -1,6 +1,7 @@
 import anchorButton from './components/buttonRelated/AnchorButton'
 import btnGroup from './components/buttonRelated/ButtonGroup';
 import button from './components/buttonRelated/Button';
+import progressButton from './components/buttonRelated/ProgressButton';
 import closeBtn from './components/buttonRelated/CloseButton';
 
 import modal from './components/modalRelated/Modal';
@@ -30,6 +31,7 @@ export const AnchorButton = anchorButton;
 export const Button = button;
 export const ButtonGroup = btnGroup;
 export const CloseButton = closeBtn;
+export const ProgressButton = progressButton;
 
 export const Modal = modal;
 export const SvgIcons = svgIcons;

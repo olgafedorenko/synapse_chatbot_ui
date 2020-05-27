@@ -20,6 +20,7 @@ import ExampleModalBasic from './components/ExampleModalBasic';
 import SubModalContainer from './components/SubModalContainer';
 
 import { Button } from '../../src/index';
+// import { ProgressButton } from '../../src/index';
 
 function getRandomColor() {
   const letters = '0123456789ABCDEF';
@@ -67,9 +68,43 @@ class Home extends Component {
 
     this.state = {
       currentPage: 'app',
+      progressWidth: 0
     };
   }
+
+  // componentDidMount() {
+  //   this.updateProgress();
+  // }
+
+  // resetProgress = () => {
+  //   this.progressInterval = setInterval(() => {
+  //     if (this.timer >= 4) {
+  //       this.setState({ progressWidth: 100 });
+  //       this.timer = 0;
+  //       clearInterval(this.progressInterval);
+  //       clearInterval(this.funFactInterval);
+  //       clearInterval(this.buttonPressTimer);
+  //     }
+  //   });
+  // }
+
+  // updateProgress = () => {
+  //   let count = 0;
+  //   this.buttonPressTimer = setInterval(() => {
+  //     count += 5;
+  //     this.timer += 1;
+  //     if (count > 99) {
+  //       this.setState({ progressWidth: 100 });
+  //       clearInterval(this.buttonPressTimer);
+  //     } else {
+  //       this.setState({ progressWidth: count });
+  //     }
+  //   }, 1000);
+  // }
+
+
   render() {
+    // const { progressWidth } = this.state;
     return (
       <div>
         <FlexAlignButtons>
@@ -88,6 +123,16 @@ class Home extends Component {
         </FlexAlignButtons>
 
         {pages[this.state.currentPage].component}
+        {/* <div>
+          <ProgressButton
+            idx="secure-form-button" 
+            form="secure-form" 
+            btnTxt="hello"
+            idTxt="submit"
+            buttonColor="0000ff" 
+            width={progressWidth} 
+          />
+        </div> */}
       </div>
     );
   }
