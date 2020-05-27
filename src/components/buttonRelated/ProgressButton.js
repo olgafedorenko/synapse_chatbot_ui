@@ -33,7 +33,6 @@ const ProgressButton = props => {
     id,
     buttonColor,
     width,
-    classes,
     fullWidth
   } = props;
 
