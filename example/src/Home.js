@@ -123,8 +123,9 @@ class Home extends Component {
         </FlexAlignButtons>
 
         {pages[this.state.currentPage].component}
-        {/* <div>
+        <div>
           <Dropup
+            fullWidth
             hide={false}
             items={
               [
@@ -135,7 +136,7 @@ class Home extends Component {
             }
             handleButtonSubmit={this.handleChosenSuggestion}
           />
-        </div> */}
+        </div>
         {/* <div>
           <ProgressButton
             idx="secure-form-button" 

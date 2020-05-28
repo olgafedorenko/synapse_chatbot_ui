@@ -135,7 +135,8 @@ const Dropup = (props) => {
   return (
     <DropUpContainer
       hide={hide ? 'none' : null}
-      className="dropUp"
+			className="dropUp"
+			fullWidth={fullWidth}
     >
       {
         items.map((item, idx) => (
