@@ -26,7 +26,7 @@ ${props => props.styleDisabled};
 const Button = (props) => {
   const {
     id,
-    handleButtonSubmit,
+    onClick,
     type,
     form,
     buttonColor,
@@ -55,7 +55,7 @@ const Button = (props) => {
 			form={form}
 			className="fullButton"
 			isDisabled={isDisabled}
-			onClick={isDisabled ? null : handleButtonSubmit} // onMouseDown
+			onClick={isDisabled ? null : onClick} // onMouseDown
 			style={style}
 			styleDisabled={isDisabled ? styleDisabled : null}
 			fullWidth={fullWidth}

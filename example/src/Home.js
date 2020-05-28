@@ -19,7 +19,7 @@ import LoadingCube from '../../src/components/LoadingCube/LoadingCube';
 import ExampleModalBasic from './components/ExampleModalBasic';
 import SubModalContainer from './components/SubModalContainer';
 
-import { Button } from '../../src/index';
+import { Button, Dropup } from '../../src/index';
 // import { ProgressButton } from '../../src/index';
 
 function getRandomColor() {
@@ -123,6 +123,19 @@ class Home extends Component {
         </FlexAlignButtons>
 
         {pages[this.state.currentPage].component}
+        {/* <div>
+          <Dropup
+            hide={false}
+            items={
+              [
+                { key: 'cat', text: 'Cat' },
+                { key: 'dog', text: 'Dog' },
+                { key: 'mouse', text: 'Mouse' },
+              ]
+            }
+            handleButtonSubmit={this.handleChosenSuggestion}
+          />
+        </div> */}
         {/* <div>
           <ProgressButton
             idx="secure-form-button" 

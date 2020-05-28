@@ -22,6 +22,8 @@ import MainFormTypeConstants from './components/Form/util/FormTypeConstants';
 
 import LoadCube from './components/LoadingCube/LoadingCube';
 
+import dropup from './components/Dropdown/Dropup';
+
 import Colors from './colors';
 
 export const colors = Colors;
@@ -49,5 +51,6 @@ export const RadioGroup = FormRadioGroup;
 export const Form = MainForm;
 export const FormTypeConstants = MainFormTypeConstants();
 
+export const Dropup = dropup;
 
 export const LoadingCube = LoadCube;
