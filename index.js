@@ -1,2 +1,1 @@
-import './app';
-import './src/sass/main.scss';
+module.exports = require('./dist')
