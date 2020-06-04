@@ -19,7 +19,7 @@ import LoadingCube from '../../src/components/LoadingCube/LoadingCube';
 import ExampleModalBasic from './components/ExampleModalBasic';
 import SubModalContainer from './components/SubModalContainer';
 
-import { Button, Dropup } from '../../src/index';
+import { Button, Dropup, Header } from '../../src/index';
 // import { ProgressButton } from '../../src/index';
 
 function getRandomColor() {
@@ -136,6 +136,19 @@ class Home extends Component {
             }
             handleButtonSubmit={this.handleChosenSuggestion}
           />
+        </div>
+        <div> 
+          <Header 
+              clientColor="000000"
+              defaultPath="BANK_LOGINS"
+              handleMinimize="function"
+              headerText ="loggin into your bank"
+              progressBar = "notvisual"
+              progressIdx = "3"
+              triggerModal = "function"
+              isBusiness = {false}
+              router={false}
+              />
         </div>
         {/* <div>
           <ProgressButton
