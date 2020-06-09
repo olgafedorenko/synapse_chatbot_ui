@@ -26,6 +26,8 @@ import dropup from './components/Dropdown/Dropup';
 
 import Colors from './colors';
 
+import header from './components/Header/header';
+
 export const colors = Colors;
 
 // button related
@@ -54,3 +56,5 @@ export const FormTypeConstants = MainFormTypeConstants();
 export const Dropup = dropup;
 
 export const LoadingCube = LoadCube;
+
+export const Header = header;
