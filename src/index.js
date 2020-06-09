@@ -3,16 +3,22 @@ import btnGroup from './components/buttonRelated/ButtonGroup';
 import button from './components/buttonRelated/Button';
 import progressButton from './components/buttonRelated/ProgressButton';
 import closeBtn from './components/buttonRelated/CloseButton';
+import radioButton from './components/buttonRelated/RadioButton';
 
 import modal from './components/modalRelated/Modal';
 import * as svgIcons from './components/SvgIcons';
 import table from './components/Table';
+
+import textBubble from  './components/Box/TextBubble';
+import loadingBubble from './components/Box/LoadingBubble';
 
 import FormLabel from './components/Label/Label';
 import FormErrorMessage from './components/ErrorMessage/ErrorMessage';
 import FormAlertMessage from './components/AlertMessage/AlertMessage';
 
 import FormInput from './components/Input/Input';
+import inputSearch from './components/Input/InputSearch';
+import inputGeneral from './components/Input/InputGeneral';
 import FormTextarea from './components/Textarea/Textarea';
 import FormCheckboxGroup from './components/CheckboxGroup/CheckboxGroup';
 import FormRadioGroup from './components/RadioGroup/RadioGroup';
@@ -34,6 +40,7 @@ export const Button = button;
 export const ButtonGroup = btnGroup;
 export const CloseButton = closeBtn;
 export const ProgressButton = progressButton;
+export const RadioButton = radioButton;
 
 export const Modal = modal;
 export const SvgIcons = svgIcons;
@@ -46,10 +53,15 @@ export const AlertMessage = FormAlertMessage;
 export const Input = FormInput;
 export const Textarea = FormTextarea;
 export const CheckboxGroup = FormCheckboxGroup;
+export const InputGeneral = inputGeneral;
+export const InputSearch = inputSearch;
 export const RadioGroup = FormRadioGroup;
 
 export const Form = MainForm;
 export const FormTypeConstants = MainFormTypeConstants();
+
+export const LoadingBubble = loadingBubble;
+export const TextBubble = textBubble;
 
 export const Dropup = dropup;
 

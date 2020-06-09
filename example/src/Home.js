@@ -19,7 +19,7 @@ import LoadingCube from '../../src/components/LoadingCube/LoadingCube';
 import ExampleModalBasic from './components/ExampleModalBasic';
 import SubModalContainer from './components/SubModalContainer';
 
-import { Button, Dropup } from '../../src/index';
+import { Button, Dropup, InputSearch, InputGeneral, TextBubble, LoadingBubble, Modal, RadioButton } from '../../src/index';
 // import { ProgressButton } from '../../src/index';
 
 function getRandomColor() {
@@ -29,6 +29,16 @@ function getRandomColor() {
     color += letters[Math.floor(Math.random() * 16)];
   }
   return color;
+}
+
+const step = {
+  content: 'Hi there! I\'m here to help you link your bank account.',
+  type: 'TEXT',
+  autoTrigger: true,
+  lastStep: false,
+  inputBox: 'HIDE',
+  progressStep: 0,
+  stepName: 'initiate_chatbot'
 }
 
 const pages = {
@@ -68,9 +78,36 @@ class Home extends Component {
 
     this.state = {
       currentPage: 'app',
-      progressWidth: 0
+      progressWidth: 0,
+      message: ''
     };
   }
+
+  updateMessage = (e) => {
+    // let's keep this clean
+    // update Message just handle the input onchange
+    // closeBanner();
+    this.setState({ message: e.target.value });
+    if (!this.addedTouchMove) {
+      document.addEventListener('touchmove', () => {
+        e.preventDefault();
+      }, { passive: false });
+      this.addedTouchMove = true;
+    }
+    window.scrollTo(0, 0);
+    document.body.scrollTop = 0;
+  }
+
+  submit = (e) => {
+    e.preventDefault();
+    let submit;
+    const { stepReducer } = this.props;
+    const { message } = this.state;
+    // console.log("olga", message, message.length !== 0, _.isEqual('__/__/____', message))
+    // const compareEmpty = _.isEqual('__/__/____', message);
+    if (message.trim().length !== 0) this.handleSubmit(submit === false);
+  }
+
 
   // componentDidMount() {
   //   this.updateProgress();
@@ -102,9 +139,8 @@ class Home extends Component {
   //   }, 1000);
   // }
 
-
   render() {
-    // const { progressWidth } = this.state;
+    const { message } = this.state;
     return (
       <div>
         <FlexAlignButtons>
@@ -124,18 +160,45 @@ class Home extends Component {
 
         {pages[this.state.currentPage].component}
         <div>
-          <Dropup
+          {/* <InputGeneral 
+            isMobile={false}
+            clientColor="000000"
+            value={message}
+            key="1"
+            updateMessage={this.updateMessage}
+            handleSubmit={this.submit}
+            openEmoji={this.openEmoji}
+            // updateCursorPosition={this.updateCursorPosition}
+            placeholder="Write a message..."
+            // handleFocus={isMobile ? this.handleFocus : null}
+            // handleFileUpload={this.handleFileUpload}
+            // accountVerify={verifyAccountReducer.accountVerify}
+            // DOB={verifyAccountReducer.DOB}
+          /> */}
+          {/* <InputSearch
+            clientColor="000000"
+            value={message}
+            key="1"
             fullWidth
-            hide={false}
-            items={
-              [
-                { key: 'cat', text: 'Cat' },
-                { key: 'dog', text: 'Dog' },
-                { key: 'mouse', text: 'Mouse' },
-              ]
-            }
-            handleButtonSubmit={this.handleChosenSuggestion}
+            onChange={this.updateMessage}
+            // handleSubmit={this.submit}
+            // updateStyle={this.updateStyle}
+            // removeMessage={this.removeMessage}
+            // placeholder={placeholder}
+            // handleFocus={sandboxAndMobile ? this.handleFocus : null}
+          /> */}
+          <Modal
+            modalType="EDIT"
+            fullWidth
+            modalInnerStyle={{
+              height: '160px',
+              position: 'absolute',
+              transform: 'translateY(0)',
+              animation: 'moveEditExitModalUp 0.3s cubic-bezier(0.25, 0.1, 0.25, 1)',
+              WebkitAnimation: 'moveEditExitModalUp 0.3s cubic-bezier(0.25, 0.1, 0.25, 1)'
+            }}
           />
+          {/* <RadioButton /> */}
         </div>
         {/* <div>
           <ProgressButton

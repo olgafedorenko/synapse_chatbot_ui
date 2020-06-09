@@ -1,8 +1,9 @@
 import React from 'react';
-import ModalContent from './ModalContent';
+import ModalContainer from './ModalContainer';
 
 const Modal = props => {
-  return props.isOpen ? <ModalContent {...props} /> : null;
+  return <ModalContainer {...props} />;
+  // return props.isOpen ? <ModalContainer {...props} /> : null;
 };
 
 export default Modal;
