@@ -19,7 +19,7 @@ import LoadingCube from '../../src/components/LoadingCube/LoadingCube';
 import ExampleModalBasic from './components/ExampleModalBasic';
 import SubModalContainer from './components/SubModalContainer';
 
-import { Button, Dropup, InputSearch, InputGeneral, TextBubble, LoadingBubble, Modal, RadioButton } from '../../src/index';
+import { Button, Dropup, InputSearch, InputGeneral, TextBubble, LoadingBubble, Modal, RadioButton, Header } from '../../src/index';
 // import { ProgressButton } from '../../src/index';
 
 function getRandomColor() {
@@ -199,6 +199,19 @@ class Home extends Component {
             }}
           />
           {/* <RadioButton /> */}
+        </div>
+        <div> 
+          <Header 
+              clientColor="000000"
+              defaultPath="BANK_LOGINS"
+              handleMinimize="function"
+              headerText ="loggin into your bank"
+              progressBar = "notvisual"
+              progressIdx = "3"
+              triggerModal = "function"
+              isBusiness = {false}
+              router={false}
+              />
         </div>
         {/* <div>
           <ProgressButton
