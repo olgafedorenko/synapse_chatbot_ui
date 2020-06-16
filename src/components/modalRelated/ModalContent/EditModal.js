@@ -1,11 +1,4 @@
 import React, { Component } from 'react';
-
-// import { Button } from 'synapsefi-chatbot-ui';
-// import { updateModal, redoSteps, updateRenderedSteps, updateCurrentStep } from '../../actions/stepActions';
-// import { updateCategories, disableButton } from '../../actions/servicingActions';
-// import { checkListNum } from '../../actions/bankLoginActions';
-// import { stopQueue } from '../../utils/servicingCallbacks';
-// import utils from '../../utils/utils';
 import { Button } from '../../../index';
 
 import ModalObj from '../utili/ModalCons';
@@ -47,16 +40,6 @@ class EditModal extends Component {
     resetRedux();
   }
 
-  // startOverModal = () => {
-  //   const { props } = this;
-  //   const { renderedSteps, firstStepIndex } = this.props;
-  //   const firstStep = renderedSteps.splice(0, firstStepIndex + 1);
-  //   // set renderedSteps and currentStep to the first step
-  //   props.updateRenderedSteps(firstStep);
-  //   props.updateCurrentStep(firstStep[firstStepIndex]);
-  //   // close the modal
-  // }
-
   handleModal = (type) => {
     const { props, props: { selectedCategories, currentStep } } = this;
     if (type === 'EDIT') {
@@ -69,8 +52,6 @@ class EditModal extends Component {
       this.exitModal();
       props.updateModal('isExit', true);
       setTimeout(() => { props.updateModal('isExit', false); }, 2000);
-    // } else if (type === 'STARTOVER') {
-    //   this.startOverModal();
     }
     this.closeModal();
   }
@@ -80,8 +61,6 @@ class EditModal extends Component {
     const btn2Txt = terminate ? 'OK' : 'No';
     return (
       <div className="modal-button-container">
-        {/* {terminate ? null : <FullButton idx="exit-modal-two" handleButtonSubmit={() => this.handleModal(modalType)} btnTxt="Yes" buttonColor={clientColor} style={{ width: 'calc(50% - 0.5px)' }} />}
-        <FullButton idx="exit-modal-two" handleButtonSubmit={this.closeModal} btnTxt={btn2Txt} buttonColor={clientColor} style={{ width: terminate ? '100%' : 'calc(50% - 0.5px)' }} /> */}
         {terminate ? null : <Button fullWidth id="exit-modal-two" onClick={() => this.handleModal(modalType)} buttonColor={clientColor} style={{ width: 'calc(50% - 0.5px)' }}> Yes </Button>}
         <Button fullWidth id="exit-modal-two" onClick={this.closeModal} buttonColor={clientColor} style={{ width: terminate ? '100%' : 'calc(50% - 0.5px)' }}> {btn2Txt} </Button>
       </div>
@@ -94,8 +73,6 @@ class EditModal extends Component {
     if (terminate) btn2Txt = 'OK';
     return (
       <div className="modal-button-container rounded" style={{ margin: '0 1rem', position: 'unset', width: 'unset' }}>
-        {/* {terminate ? null : <RoundedButton idx="exit-modal-one" handleButtonSubmit={() => this.handleModal(modalType)} btnTxt={modalType === 'EXIT' ? 'Exit' : 'Yes'} buttonColor={clientColor} style={{ width: 'calc(50% - 3px)' }} />}
-        <RoundedButton idx="exit-modal-one" handleButtonSubmit={this.closeModal} btnTxt={btn2Txt} buttonColor={clientColor} style={{ width: terminate ? '100%' : 'calc(50% - 3px)' }} /> */}
         {terminate ? null : <Button fullWidth={false} id="exit-modal-one" onClick={() => this.handleModal(modalType)} buttonColor={clientColor} style={{ width: 'calc(50% - 3px)' }}> {modalType === 'EXIT' ? 'Exit' : 'Yes'} </Button>}
         <Button fullWidth={false} id="exit-modal-one" onClick={this.closeModal} buttonColor={clientColor} style={{ width: terminate ? '100%' : 'calc(50% - 3px)' }}> {btn2Txt} </Button>
       </div>

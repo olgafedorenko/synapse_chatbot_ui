@@ -259,7 +259,6 @@ const TextBubble = (props) => {
         {content}
         {list}
         {stepImage ? (
-          // <LazyLoad>
           <div style={{ display: "block" }}>
             {step.upload ? (
               <div
@@ -292,12 +291,10 @@ const TextBubble = (props) => {
                 {bankName}
               </span>
             )}
-            {/* {show ? <Image onError={addDefaultSrc} src='https://cdn.synapsepay.com/bank_logos/new/aaaaa.png' alt="logo" />  : <span id="bankName">{bankName}</span>} */}
           </div>
-        ) : // </LazyLoad>
+        ) : 
         null}
         <div style={endText ? { marginTop: "1.25rem" } : null}>{endText}</div>
-        {/* {stepImage ? <div><Image src={image} alt="logo" /></div> : null} */}
       </Bubble>
     </div>
   );

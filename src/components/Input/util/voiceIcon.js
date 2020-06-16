@@ -28,30 +28,6 @@ export const voiceMemoCloseIcon = () => {
   );
 };
 
-
-// export const voiceMemoPlayButton = (clientColor) => {
-//   const Wrapper = styled.div`
-//     height: 28px;
-//     width: 28px;
-//     border-radius: 14px;
-//     background: gray;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     :hover {
-//       background: ${utils.hoverColor(`#${clientColor}`)};
-//     };
-//   `;
-
-//   return (
-//     <Wrapper>
-//       <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-//         <path d="M12.5 7.13397C13.1667 7.51888 13.1667 8.48112 12.5 8.86602L2 14.9282C1.33333 15.3131 0.499999 14.832 0.499999 14.0622L0.5 1.93782C0.5 1.16802 1.33333 0.686896 2 1.0718L12.5 7.13397Z" fill="white" />
-//       </svg>
-//     </Wrapper>
-//   );
-// };
-
 export const voiceMemoPlayButton = (
   color,
   noHoverColor = false,
@@ -226,11 +202,6 @@ export const sendButton = (clientColor) => {
     <SendIcon clientColor={clientColor} id="closeIcon">
         <SvgIcons.send clientColor={clientColor} id="sendBtn" />
     </SendIcon>
-    // <Wrapper>
-    //   <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-    //     <path d="M2.47362 14.9921C1.95051 14.6911 1.28237 14.8712 0.9813 15.3943C0.68023 15.9174 0.860247 16.5855 1.38336 16.8866L2.47362 14.9921ZM9.27492 1.10655L9.93124 0.232701C9.47977 -0.106388 8.84421 -0.0456983 8.46511 0.37272L9.27492 1.10655ZM3.79011 5.53201C3.38478 5.97923 3.41878 6.67041 3.86613 7.07561C4.31335 7.48094 5.00452 7.44694 5.40973 6.9996L3.79011 5.53201ZM14.6293 6.4947C15.112 6.85716 15.797 6.75978 16.1594 6.27722C16.5219 5.79454 16.4245 5.10956 15.942 4.7471L14.6293 6.4947ZM1.38336 16.8866C2.38052 17.4604 3.62424 17.9358 4.91466 17.9815C6.24054 18.0285 7.61232 17.6161 8.71489 16.4324C9.78638 15.2821 10.5024 13.5117 10.8052 11.036C11.1089 8.55158 11.009 5.25831 10.3555 0.942913L8.19433 1.27019C8.8311 5.4747 8.90663 8.55376 8.6356 10.7707C8.36348 12.9964 7.75463 14.2565 7.11555 14.9426C6.50756 15.5953 5.78312 15.8251 4.99201 15.7972C4.1652 15.768 3.27088 15.451 2.47362 14.9921L1.38336 16.8866ZM8.46511 0.37272L3.79011 5.53201L5.40973 6.9996L10.0847 1.84038L8.46511 0.37272ZM8.6186 1.9804L14.6293 6.4947L15.942 4.7471L9.93124 0.232701L8.6186 1.9804Z" fill="white" />
-    //   </svg>
-    // </Wrapper>
   );
 };
 

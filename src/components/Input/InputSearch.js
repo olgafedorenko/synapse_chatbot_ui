@@ -75,7 +75,6 @@ class InputSearch extends React.Component {
     e.preventDefault();
     const { clickCount } = this.state;
     const { onChange } = this.props;
-    console.log('asdf');
     if (clickCount === 0) {
       this.setState({ clickCount: clickCount + 1 });
     }
@@ -112,10 +111,6 @@ class InputSearch extends React.Component {
 			placeholder,
       fullWidth
     } = this.props;
-
-    // setTimeout(() => {
-    //   this.setState({ placeholderColor: '#ffffff' });
-    // }, 1000);
 
     return (
       <Form

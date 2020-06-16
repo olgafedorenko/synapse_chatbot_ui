@@ -50,7 +50,6 @@ class LoadingModal extends PureComponent {
     return (
       <div className="modal-button-container">
         <Button fullWidth idx="exit-modal-two" handleButtonSubmit={this.closeModal} btnTxt="Cancel" buttonColor={clientColor} />
-        {/* <Button fullWidth id="exit-modal-two" onClick={this.closeModal} buttonColor={clientColor}> Cancel </Button> */}
       </div>
     );
   }
@@ -60,7 +59,6 @@ class LoadingModal extends PureComponent {
     return (
       <div className="modal-button-container rounded" style={{ margin: '10% 1rem 0px 44px', position: 'unset', width: 'unset' }}>
         <Button fullWidth={false} idx="exit-modal-one" handleButtonSubmit={this.closeModal} btnTxt="Cancel" buttonColor={clientColor} />
-        {/* <Button fullWidth={false} id="exit-modal-one" onClick={this.closeModal} buttonColor={clientColor}> Cancel </Button> */}
       </div>
     );
   }

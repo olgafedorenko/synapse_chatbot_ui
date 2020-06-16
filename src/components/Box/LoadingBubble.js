@@ -45,17 +45,6 @@ const LoadingBubble = (props) => {
 `;
 
   const wave = keyframes`
-    // 0%, 50%, 100%  {
-    //   transform: initial;
-    // }
-
-    // 25% {
-    //   transform: translateY(-8px);
-    // }
-
-    // // 60% {
-    // //   transform: translateY(6px);
-    // // }
     0%, 50%, 100%  {
       transform: initial;
     }

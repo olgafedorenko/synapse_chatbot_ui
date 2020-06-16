@@ -184,7 +184,6 @@ class InputGeneral extends Component {
       placeholderColor: "#ffffff",
       showCloseIcon: false,
       heightForm: 52,
-      // recording: false,
       showVoiceMemo: false,
     };
   }
@@ -205,10 +204,8 @@ class InputGeneral extends Component {
       } else {
         document.getElementById('input-box-wrapper-custom').style.height = `${document.getElementById('inputBox').scrollHeight + 6}px`;
       }
-      // document.getElementById('inputBox').style.height = `${document.getElementById('inputBox').scrollHeight}px`;
     } else {
       if (fullWidth) {
-      // document.getElementById('inputBox').style.height = '34px';
       document.getElementById("input-box-wrapper").style.height = "38px";
       } else {
         document.getElementById('input-box-wrapper-custom').style.height = '34px';
@@ -242,8 +239,6 @@ class InputGeneral extends Component {
     this.setState({ showVoiceMemo: false });
   };
 
-  // toggleRecording = () => this.setState(st => ({ recording: !st.recroding }));
-
   render() {
     const {
       placeholderColor,
@@ -262,8 +257,7 @@ class InputGeneral extends Component {
       handleFileUpload,
       isMobile,
       fullWidth,
-      // accountVerify,
-      DOB,
+      DOB
     } = this.props;
 
     const acceptedFileTypes =
@@ -282,15 +276,9 @@ class InputGeneral extends Component {
       window.navigator.userAgent.search("Chrome") < 0
     ) {
       safari = true;
-      // autocomplete = 'off';
     } else {
       safari = false;
     }
-    // const dissableStatus = {
-    //   pointerEvents: 'none',
-    //   opacity: '0.4'
-    // };
-    // const style = accountVerify ? {} : dissableStatus;
 
     return (
       <React.Fragment>
@@ -373,9 +361,6 @@ class InputGeneral extends Component {
               placeholderColor={fullWidth ? null : placeholderColor}
               isMobile={fullWidth ? null : isMobile}
             >
-              {/* {accountVerify
-                  ? ( */}
-              {/* <div> */}
               {/* {(!value.length && (<VoiceMemoButton onClick={this.showVoiceMemo}>{voiceMemoIcon(clientColor)}</VoiceMemoButton>))} */}
               {!isMobile
                 ? safari
@@ -405,30 +390,6 @@ class InputGeneral extends Component {
                 onFocus={handleFocus}
                 className={value ? inputlong : null}
               />
-              {/* </div> */}
-              {/* ) */}
-              {/* : (
-                    <InputMask
-                      mask={DOB === null ? '99/99/9999' : ''}
-                      name="dob"
-                      placeholder={DOB === null ? 'mm/dd/yyyy' : placeholder}
-                      onChange={this.updateValue}
-                      onKeyDown={this.onEnterPress}
-                      value={value}
-                      color={color}
-                      autoComplete="off"
-                      autoCorrect="off"
-                      autoCapitalize="off"
-                      spellCheck="false"
-                      id="inputBox"
-                      // onKeyUp={updateCursorPosition}
-                      // onClick={updateCursorPosition}
-                      // onFocus={handleFocus}
-                      className={value ? inputlong : null}
-                    />
-                  ) */}
-
-              {/* } */}
             </InputBoxStyle>
             {
               fullWidth ? (
