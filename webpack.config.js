@@ -19,6 +19,21 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
       },
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              name: './assets/[name].[hash:4].[ext]',
+              limit: 10000,
+            },
+          },
+          {
+            loader: 'img-loader',
+          },
+        ],
+      }
     ],
   },
   plugins: [
