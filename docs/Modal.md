@@ -1,18 +1,21 @@
-## Button
+# Button
 
-# Example
+## Example
 
 ```jsx
+
 import { Button } from 'synapsefi-chatbot-ui';
+
 <Button 
-    onClick={() => console.log('This is an alert')}
-    isDisabled
-    fullWidth
+	onClick={() => console.log('This is an alert')}
+	isDisabled
+	fullWidth
 >
-    Click
+  Click
 </Button>
+
 ```
-# Props
+## Props
 Property | Type | Required | Description
 --- | --- | --- | ---
 isDisabled | `boolean` |false | Set isDisabled style, will prevent on click action
