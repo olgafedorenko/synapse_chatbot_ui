@@ -5,7 +5,7 @@ Synapse UI components built with styled-components
 ## Install
 
 ```sh
-npm install synapsefi-ui
+npm install synapse-chatbot-ui
 ```
 
 ##### Current Peer Dependencies
