@@ -2,12 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import { Document, Page } from "react-pdf";
 import ProgressiveImage from 'react-progressive-image';
-import logo from "../../../bank-icon.png";
 import * as SvgIcons from '../SvgIcons';
 
 import utils from '../Input/util/util';
 
 let show = true;
+let logo = 'https://synapse-chatbot.s3-us-west-1.amazonaws.com/img/bank-icon.png';
 
 function addDefaultSrc(ev) {
   ev.target.src = logo;
