@@ -109,6 +109,7 @@ class Home extends Component {
               triggerModal = "function"
               isBusiness = {false}
               router={false}
+              isBeta={false}
               />
         </div>
         {/* <div>
