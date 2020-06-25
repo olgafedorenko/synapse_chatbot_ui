@@ -28,7 +28,8 @@ const Header = (props) => {
     handleMinimize,
     headerText,
     headerSubText,
-    router
+    router,
+    isBeta
   } = props;
 
   return (
@@ -41,11 +42,11 @@ const Header = (props) => {
         )
         : null
       }
-      <HeaderWrapper defaultPath={defaultPath} style={isBusiness ? { paddingRight: '0px' } : null}>
+      <HeaderWrapper defaultPath={router} style={isBusiness ? { paddingRight: '0px' } : null}>
         <HeaderContainer>
           <HeaderText>
             {headerText}
-            <BetaLabel isBusiness={isBusiness}> {isBusiness ? 'Business' : 'Beta'} </BetaLabel>
+            {isBeta ? <BetaLabel isBusiness={isBusiness}> {isBusiness ? 'Business' : 'Beta'} </BetaLabel> : null}
           </HeaderText>
           {defaultPath === 'BANK_LOGINS' || defaultPath === 'ROUTER-BANK_LOGINS'  ? (
             progressBar !== 'visual'
