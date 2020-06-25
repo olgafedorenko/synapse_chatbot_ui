@@ -51,8 +51,8 @@ const Bubble = styled.div`
   display: inline-block;
   width: auto;
 	max-width: 78%;
-	border-bottom-left-radius: ${props => props.withTail ? '0' : null};;
-	word-wrap: break-word;
+	border-bottom-left-radius: ${props => props.withTail ? '0' : null};
+	overflow-wrap: break-word;
 `;
 
 const Image = styled.img`
@@ -239,7 +239,7 @@ const TextBubble = (props) => {
   }
 
   return (
-    <div style={{ width: "100%" }}>
+    <div style={withTail ? { width: "100%" } : null}>
 			{
 				withTail ? (
 					<TailDiv>

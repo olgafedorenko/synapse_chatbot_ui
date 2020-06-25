@@ -41,13 +41,9 @@ class EditModal extends Component {
   }
 
   handleModal = (type) => {
-    const { props, props: { selectedCategories, currentStep } } = this;
+    const { props } = this;
     if (type === 'EDIT') {
       this.undoModal();
-      // reset the Categories
-      selectedCategories.pop();
-      props.updateCategories(selectedCategories);
-      if (currentStep.startQueue) stopQueue();
     } else if (type === 'EXIT' || type === 'EXIT_LAST_STEP') {
       this.exitModal();
       props.updateModal('isExit', true);

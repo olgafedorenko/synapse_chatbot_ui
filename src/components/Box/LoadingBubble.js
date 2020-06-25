@@ -30,7 +30,7 @@ const LoadingBubble = (props) => {
   height: 28px;
   width: 44px;
   background-color: ${bubbleColor}; // should be cool/warm tone, use props
-  border-radius: 10px;
+  border-radius: 10px 10px 10px 0;
   // padding: 11px 5px;
   float: left;
   margin:  4px 5px 4px 36px; 
@@ -40,7 +40,6 @@ const LoadingBubble = (props) => {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom-left-radius: 0;
   border: ${bubbleColor === '#fff' ? 'solid 1px #D9D9D9' : null};
 `;
 
