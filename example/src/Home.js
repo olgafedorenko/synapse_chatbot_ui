@@ -58,7 +58,8 @@ class Home extends Component {
     return (
       <div>
         <div>
-          {/* <InputGeneral 
+          <InputGeneral 
+            fullWidth
             isMobile={false}
             clientColor="000000"
             value={message}
@@ -66,13 +67,14 @@ class Home extends Component {
             updateMessage={this.updateMessage}
             handleSubmit={this.submit}
             openEmoji={this.openEmoji}
+            showEmoji={false}
             // updateCursorPosition={this.updateCursorPosition}
             placeholder="Write a message..."
             // handleFocus={isMobile ? this.handleFocus : null}
             // handleFileUpload={this.handleFileUpload}
             // accountVerify={verifyAccountReducer.accountVerify}
             // DOB={verifyAccountReducer.DOB}
-          /> */}
+          />
           {/* <InputSearch
             clientColor="000000"
             value={message}

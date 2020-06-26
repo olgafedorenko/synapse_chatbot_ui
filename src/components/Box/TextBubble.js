@@ -28,7 +28,7 @@ const Bubble = styled.div`
     return "black";
   }};
 
-  border-radius: 10px;
+  border-radius: ${props => props.withTail ? '10px 10px 10px 0' : '10px'};
   border: ${(props) => {
     if (props.uploadBorder) return props.uploadBorder;
     if (props.border) return "solid 1px #D9D9D9";
@@ -51,7 +51,6 @@ const Bubble = styled.div`
   display: inline-block;
   width: auto;
 	max-width: 78%;
-	border-bottom-left-radius: ${props => props.withTail ? '0' : null};
 	overflow-wrap: break-word;
 `;
 
