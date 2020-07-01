@@ -136,8 +136,6 @@ const VoiceMemoButton = styled.div`
 const EmojiDiv = styled.div`
   cursor: pointer;
   padding: 5px;
-  height: ${props => props.fullWidth ? null : '22px'};
-  width: ${props => props.fullWidth ? null : '22px'};
   &:hover, ${props => (props.fullWidth ? null : `${RoundBorder}:hover & `)} {
     svg {
       path {
@@ -228,15 +226,6 @@ class InputGeneral extends Component {
     e.preventDefault();
     const { openEmoji } = this.props;
     openEmoji(e);
-  };
-
-  showVoiceMemo = () => this.setState({ showVoiceMemo: true });
-
-  closeVoiceMemo = () => {
-    /**
-     * OTHER LOGIC HERE ABOUT ABANDONING VOICE MEMO ETC...
-     */
-    this.setState({ showVoiceMemo: false });
   };
 
   render() {

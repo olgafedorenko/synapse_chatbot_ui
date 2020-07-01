@@ -15,11 +15,9 @@ const LoadingBubble = (props) => {
   width: 44px;
   background-color: ${bubbleColor}; // should be cool/warm tone, use props
   border-radius: 10px;
-  // padding: 11px 5px;
   float: left;
   margin:  4px 5px 4px 36px; 
   display: inline-block;
-  // width: auto;
   max-width: 78%;
   display: flex;
   justify-content: center;
@@ -31,11 +29,9 @@ const LoadingBubble = (props) => {
   width: 44px;
   background-color: ${bubbleColor}; // should be cool/warm tone, use props
   border-radius: 10px 10px 10px 0;
-  // padding: 11px 5px;
   float: left;
   margin:  4px 5px 4px 36px; 
   display: inline-block;
-  // width: auto;
   max-width: 78%;
   display: flex;
   justify-content: center;

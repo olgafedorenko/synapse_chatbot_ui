@@ -104,7 +104,7 @@ const TextBubble = (props) => {
     fileType,
     withTail,
   } = props;
-  console.log('asdfa',withTail);
+  
   const downloadStyle = {
     boxSizing: step.user ? "inherit" : "border-box",
     border: !step.user && !bubbleBorder ? "1px solid #F0F1F3" : "none",
