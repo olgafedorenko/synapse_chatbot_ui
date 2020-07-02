@@ -9,8 +9,8 @@ const Label = styled.label`
     .inner-circle {
       background-color: ${props => props.clientColor};
       opacity: ${(props) => {
-    if (props.selected) return props.custom ? 0.5 : 1;
-    return props.custom ? 0.2 : 0.5;
+    if (props.selected) return props.fullWidth ? 0.5 : 1;
+    return props.fullWidth ? 0.2 : 0.5;
   }};
   }
 `;
@@ -19,8 +19,8 @@ export const StyledOuterCircle = styled.div`
   margin: 0 1rem;
   height: 24px;
   width: 24px;
-  border: ${props => (!props.custom ? '1px solid #B3B3B3' : 'none')};
-  background-color: ${props => (!props.custom ? 'white;' : '#EEEEEE')};
+  border: ${props => (!props.fullWidth ? '1px solid #B3B3B3' : 'none')};
+  background-color: ${props => (!props.fullWidth ? 'white;' : '#EEEEEE')};
   box-sizing: border-box;
   border-radius: 50%;
   display: flex;
@@ -51,27 +51,27 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 
-const RadioButton = ({ label, checked, handleClick, clientColor, custom, borderRadius, checkListClassName }) => (
+const RadioButton = ({ content, checked, onClick, clientColor, fullWidth, borderRadius, className }) => (
   <Label
-    // key={`selection-${idx}-${Math.random()}`}
-    htmlFor={label}
-    className={checkListClassName}
-    onClick={handleClick}
-    onKeyPress={handleClick}
+    key={`selection-${idx}-${Math.random()}`}
+    htmlFor={content}
+    className={className}
+    onClick={onClick}
+    onKeyPress={onClick}
     clientColor={clientColor}
     borderRadius={borderRadius}
-    custom={custom}
+    fullWidth={fullWidth}
     selected={checked}
   >
     <Wrapper>
-      <StyledOuterCircle custom={custom} className="outer-circle" selected={checked} clientColor={clientColor}>
-        {custom
+      <StyledOuterCircle fullWidth={fullWidth} className="outer-circle" selected={checked} clientColor={clientColor}>
+        {fullWidth
           ? <StyledInnerCircleCustomized className="inner-circle" selected={checked} clientColor={clientColor} />
           : <StyledInnerCircle className="inner-circle" selected={checked} clientColor={clientColor} />
         }
       </StyledOuterCircle>
     </Wrapper>
-    <span>{label}</span>
+    <span>{content}</span>
   </Label>
 );
 
