@@ -28,7 +28,7 @@ const Bubble = styled.div`
     return "black";
   }};
 
-  border-radius: 10px;
+  border-radius: ${props => props.withTail ? '10px 10px 10px 0' : '10px'};
   border: ${(props) => {
     if (props.uploadBorder) return props.uploadBorder;
     if (props.border) return "solid 1px #D9D9D9";
@@ -51,8 +51,7 @@ const Bubble = styled.div`
   display: inline-block;
   width: auto;
 	max-width: 78%;
-	border-bottom-left-radius: ${props => props.withTail ? '0' : null};;
-	word-wrap: break-word;
+	overflow-wrap: break-word;
 `;
 
 const Image = styled.img`
@@ -105,7 +104,7 @@ const TextBubble = (props) => {
     fileType,
     withTail,
   } = props;
-  console.log('asdfa',withTail);
+  
   const downloadStyle = {
     boxSizing: step.user ? "inherit" : "border-box",
     border: !step.user && !bubbleBorder ? "1px solid #F0F1F3" : "none",
@@ -239,7 +238,7 @@ const TextBubble = (props) => {
   }
 
   return (
-    <div style={{ width: "100%" }}>
+    <div style={withTail ? { width: "100%" } : null}>
 			{
 				withTail ? (
 					<TailDiv>

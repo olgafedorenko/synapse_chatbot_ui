@@ -3,16 +3,35 @@
 ## Example
 
 ```jsx
-import { Modal } from "synapsefi-chatbot-ui";
+import { Modal, Button } from "synapsefi-chatbot-ui";
 
-<Modal modalType="EDIT" fullWidth modalInnerStyle={{ height: "214px" }} />;
+<div>
+	{isOpen ? 
+		<Modal
+			isOpen={isOpen}
+			closeModal={() => this.setState({ isOpen: false })}
+			disableOutsideOnClick
+			className="modal"
+			modalInnerStyle={{
+				height: '500px'
+			}}
+		>
+			<div>hello</div>
+		</Modal>
+		: null
+	}
+</div>
+
+<Button onClick={() => this.setState({ isOpen: true })}>Open Modal</Button>
 ```
 
 ## Props
 
-| Property        | Type         | Required | Description                                                  |
-| --------------- | ------------ | -------- | ------------------------------------------------------------ |
-| modalType       | `string`     | true     | Type of the Modal, `EDIT`, `LOADING`, `TERMINATED`, `RATING` |
-| fullWidth       | `string`     | true     | Is the Modal customizable or not                             |
-| modalInnerStyle | `innerStyle` | true     | Inner CSS style of Modal                                     |
-| selectPath      | `function`   | false    | Callback function of which path modal inside                 |
+| Property              | Type                  | Required | Description                                                        |
+| --------------------- | --------------------- | -------- | ------------------------------------------------------------------ |
+| isOpen                | `bool`                | true     | Defines when the modal is visible                                  |
+| closeModal            | `function`            | true     | Function that hides the modal, needed for clicking outside content |
+| modalInnerStyle       | `innerStyle`          | false    | Inner Modal Inline CSS style of Modal                              |
+| className             | `string`              | false    | className of the inner Modal                                       |
+| disableOutsideOnClick | `bool`                | flase    | Disable outside click function which closes modal                      |
+| children              | `componet/DOMelement` | flase    | Children componets                                                 |

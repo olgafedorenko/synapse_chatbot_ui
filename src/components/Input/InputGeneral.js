@@ -45,7 +45,7 @@ const InputBoxStyle = styled.div`
     ::placeholder {
       color: #dcdcdc;
     }
-    padding: ${props => props.fullWidth ? '6px 12px' : '4 12px'};
+    padding: ${props => props.fullWidth ? '6px 12px' : '4px 12px'};
     -webkit-appearance: ${props => props.fullWidth ? 'none' : null};
     box-shadow: ${props => props.fullWidth ? 'none !important' : null};
     background-color: transparent;
@@ -110,7 +110,7 @@ const RoundBorder = styled.div`
 
 const UploadDiv = styled.div`
   cursor: pointer;
-  padding: ${props => props.fullWidth ? '5px 8px' : null};
+  padding: 5px 8px;
   -webkit-transition: all 0.15s cubic-bezier(0.25, 0.1, 0.25, 1);
   -moz-transition: all 0.15s cubic-bezier(0.25, 0.1, 0.25, 1);
   transition: all 0.15s cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -135,9 +135,7 @@ const VoiceMemoButton = styled.div`
 
 const EmojiDiv = styled.div`
   cursor: pointer;
-  padding: ${props => props.fullWidth ? '5px' : null};
-  height: ${props => props.fullWidth ? null : '22px'};
-  width: ${props => props.fullWidth ? null : '22px'};
+  padding: 5px;
   &:hover, ${props => (props.fullWidth ? null : `${RoundBorder}:hover & `)} {
     svg {
       path {
@@ -213,7 +211,7 @@ class InputGeneral extends Component {
     }
     if (!isMobile)
       document.getElementById("messages-content-wrapper").scrollIntoView(false);
-    updateMessage(e);
+      updateMessage(e);
   };
 
   onEnterPress = (e) => {
@@ -228,15 +226,6 @@ class InputGeneral extends Component {
     e.preventDefault();
     const { openEmoji } = this.props;
     openEmoji(e);
-  };
-
-  showVoiceMemo = () => this.setState({ showVoiceMemo: true });
-
-  closeVoiceMemo = () => {
-    /**
-     * OTHER LOGIC HERE ABOUT ABANDONING VOICE MEMO ETC...
-     */
-    this.setState({ showVoiceMemo: false });
   };
 
   render() {
@@ -257,6 +246,7 @@ class InputGeneral extends Component {
       handleFileUpload,
       isMobile,
       fullWidth,
+      onChange,
       DOB
     } = this.props;
 
@@ -313,7 +303,7 @@ class InputGeneral extends Component {
                   showEmoji={showEmoji}
                   onClick={this.openEmojiModal}
                 >
-                  <EmojiDiv id="emojiDiv" clientColor={clientColor}>
+                  <EmojiDiv id="emojiDiv" clientColor={clientColor} fullWidth={false}>
                     <EmojiIcon clientColor={clientColor} />
                   </EmojiDiv>
                 </RoundBorder>
@@ -362,21 +352,6 @@ class InputGeneral extends Component {
               isMobile={fullWidth ? null : isMobile}
             >
               {/* {(!value.length && (<VoiceMemoButton onClick={this.showVoiceMemo}>{voiceMemoIcon(clientColor)}</VoiceMemoButton>))} */}
-              {!isMobile
-                ? safari
-                  ? null
-                  : !value.length && (
-                      <VoiceMemoButton onClick={this.showVoiceMemo}>
-                        {voiceMemoIcon(clientColor)}
-                      </VoiceMemoButton>
-                    )
-                : ios
-                ? null
-                : !value.length && (
-                    <VoiceMemoButton onClick={this.showVoiceMemo}>
-                      {voiceMemoIcon(clientColor)}
-                    </VoiceMemoButton>
-                  )}
               <TextareaAutosize
                 onChange={this.updateValue}
                 onKeyDown={this.onEnterPress}
