@@ -261,6 +261,7 @@ const TextBubble = (props) => {
         noPadding={step.upload}
         err={step.resend}
         uploadBorder={uploadBorder}
+        step={step}
       >
         {content}
         {list}
