@@ -50,7 +50,7 @@ const Bubble = styled.div`
 
   display: inline-block;
   width: auto;
-	max-width: 78%;
+	max-width: ${props => props.step.upload ? '100%' : '78%'};
 	overflow-wrap: break-word;
 `;
 
@@ -201,7 +201,7 @@ const TextBubble = (props) => {
               {utils.shortenFileName(step.meta.name, 16)}
             </div>
             <div style={{ textAlign: "end" }}>
-              {(step.meta.size / 1000000).toFixed(1)} MB
+              {utils.formatBytes(step.meta.size, 1)}
             </div>
           </div>
         </div>
@@ -232,7 +232,7 @@ const TextBubble = (props) => {
               {utils.shortenFileName(step.meta.name, 16)}
             </div>
             <div style={{ textAlign: "start" }}>
-              {(step.meta.size / 1000000).toFixed(1)} MB
+              {utils.formatBytes(step.meta.size, 1)}
             </div>
           </div>
           {typeIcon}
