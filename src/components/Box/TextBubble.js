@@ -50,7 +50,10 @@ const Bubble = styled.div`
 
   display: inline-block;
   width: auto;
-	max-width: ${props => props.step.upload ? '100%' : '78%'};
+	max-width: ${(props) => {
+    if (props.step.upload) return "100%";
+    return "78%";
+  }};
 	overflow-wrap: break-word;
 `;
 
