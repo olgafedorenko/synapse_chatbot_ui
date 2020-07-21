@@ -128,12 +128,16 @@ const TextBubble = (props) => {
   let typeIcon;
   let uploadBorder;
 
-  if (fileType === "image") {
-    typeIcon = <SvgIcons.image />;
-  } else if (fileType === "pdf") {
-    typeIcon = <SvgIcons.document />;
-  } else if (fileType === "video") {
-    typeIcon = <SvgIcons.video />;
+  if (step.upload_type) {
+    if (step.upload_type.includes('image')) {
+      typeIcon = <SvgIcons.image />;
+    } else if (step.upload_type.includes('pdf')) {
+      typeIcon = <SvgIcons.document />;
+    } else if (step.upload_type.includes('video')) {
+      typeIcon = <SvgIcons.video />;
+    } else {
+      typeIcon = <SvgIcons.document />;
+    }
   }
 
   if (step.pdf) {
@@ -173,8 +177,8 @@ const TextBubble = (props) => {
     if (step.user) {
       downloadEl = (
         <div
-          onClick={loading ? null : () => utils.openBase64(image, fileType)}
-          onKeyPress={loading ? null : () => utils.openBase64(image, fileType)}
+          onClick={loading ? null : () => utils.openBase64(step.meta.content, step.upload_type)}
+          onKeyPress={loading ? null : () => utils.openBase64(step.meta.content, step.upload_type)}
           style={downloadStyle}
         >
           <span style={{ marginRight: "6px" }}>View</span>
@@ -194,10 +198,10 @@ const TextBubble = (props) => {
           {step.remove ? <SvgIcons.error /> : typeIcon}
           <div style={withTail ? null : { marginLeft: "10px" }}>
             <div style={{ fontWeight: "bold" }}>
-              {utils.shortenFileName(step.dynamicValues.file.name, 16)}
+              {utils.shortenFileName(step.meta.name, 16)}
             </div>
             <div style={{ textAlign: "end" }}>
-              {(step.dynamicValues.file.size / 1000000).toFixed(1)} MB
+              {(step.meta.size / 1000000).toFixed(1)} MB
             </div>
           </div>
         </div>
@@ -212,7 +216,7 @@ const TextBubble = (props) => {
         <div style={downloadStyle}>
           <a
             href={image}
-            download={step.dynamicValues.file.name}
+            download={step.meta.name}
             style={{ marginRight: "5px", color: `#${clientColor}` }}
           >
             Download
@@ -225,10 +229,10 @@ const TextBubble = (props) => {
         <div className="upload-image" style={{ background: `${bubbleColor}` }}>
           <div style={{ width: "142px", marginRight: "6px" }}>
             <div style={{ fontWeight: "bold" }}>
-              {utils.shortenFileName(step.dynamicValues.file.name, 16)}
+              {utils.shortenFileName(step.meta.name, 16)}
             </div>
             <div style={{ textAlign: "start" }}>
-              {(step.dynamicValues.file.size / 1000000).toFixed(1)} MB
+              {(step.meta.size / 1000000).toFixed(1)} MB
             </div>
           </div>
           {typeIcon}
@@ -264,8 +268,7 @@ const TextBubble = (props) => {
                 className={`upload-step ${
                   step.remove ? "err-file-upload" : ""
                 }`}
-                id={step.dynamicValues.id}
-              >
+                id={step.meta.id}>
                 {uploadImg}
                 {step.resend ? (
                   <span
