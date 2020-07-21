@@ -11,6 +11,12 @@ class Home extends Component {
     };
   }
 
+  updateMessage = (e) => {
+    // let's keep this clean
+    // update Message just handle the input onchange
+    this.setState({ message: e.target.value });
+  }
+
   render() {
     const { message, isOpen } = this.state;
     const stepOne = {
@@ -43,7 +49,8 @@ class Home extends Component {
             handleSubmit={this.submit}
             openEmoji={this.openEmoji}
             showEmoji={false}
-            placeholder="Write a message..."
+            isMask
+            isCur
           />
           <TextBubble
             step={stepOne}

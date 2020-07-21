@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import styled, { css } from "styled-components";
 import Color from 'color';
 import TextareaAutosize from 'react-autosize-textarea';
+import InputMask from 'react-input-mask';
+import CurrencyInput from './util/CurInput';
 import utils from './util/util';
 import * as SvgIcons from '../SvgIcons';
 
@@ -231,6 +233,8 @@ class InputGeneral extends Component {
       handleFileUpload,
       isMobile,
       fullWidth,
+      isMask,
+      isCur,
       onChange,
       DOB
     } = this.props;
@@ -329,19 +333,56 @@ class InputGeneral extends Component {
             placeholderColor={fullWidth ? null : placeholderColor}
             isMobile={fullWidth ? null : isMobile}
           >
-            <TextareaAutosize
-              onChange={this.updateValue}
-              onKeyDown={this.onEnterPress}
-              value={value}
-              color={color}
-              name="message"
-              id="inputBox"
-              placeholder={placeholder}
-              onKeyUp={updateCursorPosition}
-              onClick={updateCursorPosition}
-              onFocus={handleFocus}
-              className={value ? inputlong : null}
-            />
+            {isMask 
+            ? (
+              isCur ? 
+              <CurrencyInput 
+                placeholder="$0.00" 
+                type="text" 
+                onChange={this.updateValue}
+                onKeyDown={this.onEnterPress}
+                value={value}
+                color={color}
+                autoComplete="off"
+                autoCorrect="off"
+                autoCapitalize="off"
+                spellCheck="false"
+                id="inputBox"
+                className={value ? inputlong : null}
+              />
+              :
+              <InputMask
+                mask='99/99/9999'
+                name="dob"
+                placeholder='mm/dd/yyyy'
+                onChange={this.updateValue}
+                onKeyDown={this.onEnterPress}
+                value={value}
+                color={color}
+                autoComplete="off"
+                autoCorrect="off"
+                autoCapitalize="off"
+                spellCheck="false"
+                id="inputBox"
+                className={value ? inputlong : null}
+              />
+            )
+            : (
+                <TextareaAutosize
+                  onChange={this.updateValue}
+                  onKeyDown={this.onEnterPress}
+                  value={value}
+                  color={color}
+                  name="message"
+                  id="inputBox"
+                  placeholder={placeholder}
+                  onKeyUp={updateCursorPosition}
+                  onClick={updateCursorPosition}
+                  onFocus={handleFocus}
+                  className={value ? inputlong : null}
+                />
+              )
+            }
           </InputBoxStyle>
           {
             fullWidth ? (
