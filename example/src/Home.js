@@ -51,6 +51,7 @@ class Home extends Component {
             showEmoji={false}
             isMask
             isCur
+            noUpload
           />
           <TextBubble
             step={stepOne}

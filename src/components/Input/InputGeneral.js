@@ -235,6 +235,8 @@ class InputGeneral extends Component {
       fullWidth,
       isMask,
       isCur,
+      noEmoji,
+      noUpload,
       onChange,
       DOB
     } = this.props;
@@ -274,6 +276,7 @@ class InputGeneral extends Component {
                 id="emojiDiv"
                 onClick={this.openEmojiModal}
                 clientColor={clientColor}
+                style={noEmoji ? {display: 'none'} : null}
               >
                 <SvgIcons.emoji clientColor={clientColor} />
               </EmojiDiv>
@@ -285,7 +288,7 @@ class InputGeneral extends Component {
                 showEmoji={showEmoji}
                 onClick={this.openEmojiModal}
               >
-                <EmojiDiv id="emojiDiv" clientColor={clientColor} fullWidth={false}>
+                <EmojiDiv id="emojiDiv" clientColor={clientColor} fullWidth={false} style={noEmoji ? {display: 'none'} : null}>
                   <EmojiIcon clientColor={clientColor} />
                 </EmojiDiv>
               </RoundBorder>
@@ -298,6 +301,7 @@ class InputGeneral extends Component {
               <UploadDiv
               clientColor={clientColor}
               className={value ? "hidden" : "active"}
+              style={noUpload ? {display: 'none'} : null}
               id="file"
             >
               <div className="image-upload">
@@ -316,7 +320,7 @@ class InputGeneral extends Component {
             </UploadDiv>
             ) : (
             <RoundBorder clientColor={clientColor} className={value ? 'hidden' : 'active'} id="file">
-              <UploadDiv clientColor={clientColor}>
+              <UploadDiv clientColor={clientColor} style={noUpload ? {display: 'none'} : null}>
                 <div className="image-upload" style={{ height: '22px' }}>
                   <label htmlFor="file-input">
                     <UploadIcon clientColor={clientColor} />
