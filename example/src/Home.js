@@ -50,7 +50,6 @@ class Home extends Component {
             openEmoji={this.openEmoji}
             showEmoji={false}
             isMask
-            isCur
             noUpload
           />
           <TextBubble

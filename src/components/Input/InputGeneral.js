@@ -356,9 +356,9 @@ class InputGeneral extends Component {
               />
               :
               <InputMask
-                mask='99/99/9999'
+                mask='99/99'
                 name="dob"
-                placeholder='mm/dd/yyyy'
+                placeholder='mm/dd'
                 onChange={this.updateValue}
                 onKeyDown={this.onEnterPress}
                 value={value}
