@@ -1,6 +1,6 @@
 {
   "name": "synapsefi-chatbot-ui",
-  "version": "1.1.18",
+  "version": "1.1.26",
   "description": "Synapse Chatbot UI components.",
   "main": "index.js",
   "license": "MIT",
@@ -16,8 +16,8 @@
     "push": "npm run clean && npm run build && npm publish"
   },
   "devDependencies": {
-    "@babel/cli": "^7.10.4",
-    "@babel/core": "^7.10.4",
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.10.5",
     "@babel/plugin-transform-runtime": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
@@ -60,9 +60,12 @@
     "babel-plugin-styled-components": "^1.10.6",
     "img-loader": "^3.0.1",
     "react-autosize-textarea": "^7.0.0",
+    "react-input-mask": "^2.0.4",
     "react-jss": "^10.1.1",
     "react-pdf": "^4.1.0",
     "react-progressive-image": "^0.6.0",
+    "react-text-mask": "^5.4.3",
+    "text-mask-addons": "^3.8.0",
     "url-loader": "^4.1.0"
   }
 }

@@ -1,5 +1,6 @@
-import button from './components/buttonRelated/Button';
-import progressButton from './components/buttonRelated/ProgressButton';
+import button from './components/ButtonRelated/Button';
+import progressButton from './components/ButtonRelated/ProgressButton';
+import radioButton from './components/ButtonRelated/RadioButton';
 
 import modal from './components/modalRelated/Modal';
 import * as svgIcons from './components/SvgIcons';
@@ -20,12 +21,13 @@ export const colors = Colors;
 // button related
 export const Button = button;
 export const ProgressButton = progressButton;
+export const RadioButton = radioButton;
 
 export const Modal = modal;
+
 export const SvgIcons = svgIcons;
 
 export const InputGeneral = inputGeneral;
-// export const RadioGroup = FormRadioGroup;
 
 export const LoadingBubble = loadingBubble;
 export const TextBubble = textBubble;
