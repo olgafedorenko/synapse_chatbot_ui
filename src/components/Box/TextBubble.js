@@ -169,7 +169,8 @@ const TextBubble = (props) => {
 					onError={addDefaultSrc}
 					src={image}
 					alt="logo"
-					horizontalImg={horizontalImg}
+          horizontalImg={horizontalImg}
+          withTail={withTail}
 				/>
 			)
     );
@@ -262,6 +263,7 @@ const TextBubble = (props) => {
         err={step.resend}
         uploadBorder={uploadBorder}
         step={step}
+        withTail={withTail}
       >
         {content}
         {list}
